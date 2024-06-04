@@ -63,39 +63,6 @@ StartPrgm(()=>{
 
 
   
-  // Student started studying Programming, studying Frontend, Studying HTML, Studying CSS, Studying 
-// Tailwind, Studying Frameworks, Studying React, Studying Next JS.
-// StdyPrgming("Programming",FrontEnd)
-// function startStudying(subject, callback) {
-//     console.log(`Student started studying ${subject}`);
-//     setTimeout(() => {
-//         callback();
-//     }, 1000);
-// }
-
-// function studyFrontend(callback) {
-//     startStudying("Programming", () => {
-//         startStudying("Frontend", () => {
-//             startStudying("HTML", () => {
-//                 startStudying("CSS", () => {
-//                     startStudying("Tailwind", () => {
-//                         startStudying("Frameworks", () => {
-//                             startStudying("React", () => {
-//                                 startStudying("Next JS", callback);
-//                             });
-//                         });
-//                     });
-//                 });
-//             });
-//         });
-//     });
-// }
-
-// studyFrontend(() => {
-//     console.log("Finished studying!");
-// });
-
-
 
 
 
