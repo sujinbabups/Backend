@@ -1,8 +1,8 @@
 async function NasaApi(link)
 {
     try {
-        const respose=await fetch(link)
-        const result=await respose.json();
+        const response=await fetch(link)
+        const result=await response.json();
         id=result.object.fullname;
         console.log(id);
         
