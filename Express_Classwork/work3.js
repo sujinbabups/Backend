@@ -1,20 +1,41 @@
 
-const express = require('express');
-const app = express();
 
-app.use(express.json());
 
-app.post('/reviews', (req, res) => {
-  const { bookTitle, reviewContent } = req.body;
 
-  if (!bookTitle || !reviewContent) {
-    return res.status(400).json({ error: 'Book title and review content are required.' });
-  }
 
-  res.status(201).json({ message: 'Review submitted successfully.', review: { bookTitle, reviewContent } });
-});
 
-const PORT = 3000;
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// You are developing a book review application where users can submit reviews for different books. 
+// Implement middleware to parse JSON bodies and handle a POST request to submit a review. The review data should include the book 
+// title and review content.(Easy)
+
+
