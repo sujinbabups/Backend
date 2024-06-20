@@ -61,7 +61,8 @@
                 if (!response.ok) {
                     throw new Error('Failed to update task');
                 }
-                window.location.href = '/task';
+                window.location.href = '/add_task';
+
             } catch (error) {
                 console.error('Error updating task:', error);
                 alert('Failed to update task.');
