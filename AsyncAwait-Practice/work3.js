@@ -8,34 +8,26 @@ async function ReadUrl(UrlArray) {
     for (let i of UrlArray) {
         let response = await PrintArray(i); 
         responses.push(response); 
-        printData(response)
+        // printData(response)
     }
 
     
 
 }
-function printData(resp)
-{
-    setTimeout(()=>{
-        for(let j of resp)
-            console.log(resp);
 
-    },1000)
-    
-
-}
 
 function PrintArray(url) {
-    return new Promise((resolve, reject) => {
+    pr =new Promise((resolve, reject) => {
         setTimeout(() => {
             fetch(url)
                 .then(response => response.json())
                 .then(json => {
-                    resolve(json); 
+                    console.log(json);
                 })
                 .catch(error => reject(error)); 
         }, 2000); 
     });
+    
 }
 
 

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Issue Certificate</title>
+    <link rel="stylesheet" href="stylesheet/dapstyle.css">
+</head>
+<body>
+    <form action="certDisplay" method="POST">
+    <div class="head2">
+        <nav>
+            <div class="link">
+            <a href="/">Home</a>
+            
+           <a href="/issuecert"> <button class="btn3">Issue Certificate</button></a>
+        </div>
+        </nav>
+    </div>
+        <h4 class="hd2">Certificate Dapp</h4>
+
+    <div class="form">
+        <h1>Issue New Certificate</h1>
+        <p>Select Course*</p>
+        <select name="course" id="course" class="txt">
+            <option value="Certified Blockchain Associate">Certified Blockchain Associate</option>
+            <option value="PG Diploma in Cyber Security">PG Diploma in Cyber Security</option>
+            <option value="PCB Design">PCB Design</option>
+        </select>
+        <p>Certificate Id*</p>
+        <input type="text"class="txt" id="cid" name="cid">
+        <p>Candidate name*</p>
+        <input type="text" class="txt" id="cname" name="cname">
+        <p>Select Grade*</p>
+        <select name="grade" id="grade" class="txt">
+            <option value="a">A</option>
+            <option value="b">B</option>
+            <option value="c">C</option>
+            <option value="d">D</option>
+        </select>
+        <p>Issue Date*</p>
+        <input type="date" class="txt" id="issd" name="issd"><br><br>
+        <!-- <a href="certDisplay.html"> -->
+        <input type="submit" value="Issue Certificate" class="btn3" >
+    <!-- </a> -->
+    </div>
+</form>
+
+</body>
+</html>

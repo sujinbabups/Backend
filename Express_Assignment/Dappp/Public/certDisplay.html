@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Certificate</title>
+    <link rel="stylesheet" href="stylesheet/dapstyle.css">
+</head>
+<body>
+    <div class="disp">
+    <h3>Kerala Blockchain Academy</h3>
+    
+    <img src="computer-science-degree-3919524-3246795.png" alt="">
+    <h4>This is to certify that <br><span id="stdname"></span><br> has successfully completed <br><span id="crs"></span> with <span id="gr"></span> on <span id="dt"></span></h4>
+</div>
+
+
+
+<script>
+    async function fetchCertificate() {
+        const url = window.location.href;
+        console.log(url)
+        const id = window.location.pathname.split('/').pop()
+        try {
+            const response = await fetch(`/api/issuecert/${id}`);
+            console.log(id);
+            console.log(response)
+            if (!response.ok) {
+                throw new Error('Failed to fetch certificate');
+            }
+            const data = await response.json();
+            console.log(data)
+
+            document.getElementById('stdname').textContent= data.cname;
+            document.getElementById('id').textContent = data.cid;
+            document.getElementById('gr').textContent = data.grade;
+            document.getElementById('dt').textContent = data.issd;
+        } catch (error) {
+            console.error('Error fetching certificate details:', error);
+            document.body.innerHTML = '<p>Can not load the certificate</p>';
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', fetchCertificate());
+</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificate Dapp</title>
+    <link rel="stylesheet" href="stylesheet/dapstyle.css">
+   
+</head>
+<body>
+    <div class="head">
+    <nav>
+      <a href="./certDapp.html"> <button class="btn1">Home</button></a>
+        <a href="./issuecert.html">Issue Certificate</a>
+    </nav>
+</div>
+<div class="dp">
+    <h2 class="headding">Certificate Dapp</h2>
+    <img src="computer-science-degree-3919524-3246795.png" alt=""><br>
+    <input type="search" class="srch" placeholder="Enter Certificate Id to View" id="certId"><button class="btn2" onclick="viewCert()">Search</button>
+</div>
+
+<script>
+
+
+        function viewCert() {
+          const certId = document.getElementById('certId').value;
+
+ 
+          const url = `/${certId}`;
+
+        //   console.log(certId);
+
+        //   console.log(url);
+
+         
+          window.location.href = url;
+      }
+     
+</script>
+</body>
+</html>

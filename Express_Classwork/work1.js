@@ -8,13 +8,13 @@ function log(req, res, next) {
 
 app.use(log);
 
-/
+
 app.get('/', (req, res) => {
   res.send("Login Success");
 });
 
-app.get('/products', (req, res) => {
-  res.send('Welcome to our products');
+app.get('/buy', (req, res) => {
+  res.send('select products.');
 });
 
 const PORT = 3000;
