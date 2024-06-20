@@ -15,4 +15,4 @@ app.get('/',(req,res)=>{
 
 port=3000;
 app.listen(port)
-console.log(`the server is running in ${port}`);
+console.log(`The server is running in ${port}`);
