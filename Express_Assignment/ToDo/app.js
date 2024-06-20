@@ -50,6 +50,15 @@ app.delete('/api/task/:id', (req, res) => {
     tasks.splice(taskIndex, 1);
     res.status(204).send();
 });
+app.put('/api/task/:id', (req, res) => {
+    const id = req.params.id;
+    const taskIndex = tasks.findIndex(task => task.TaskID === id);
+    if (taskIndex === -1) {
+        return res.status(404).json({ error: 'Task not found' });
+    }
+    document.getElementById('TaskID').innerHTML=id
+    res.status(204).send();
+});
 
 app.listen(3007, () => {
     console.log("Server is running on port 3000");
