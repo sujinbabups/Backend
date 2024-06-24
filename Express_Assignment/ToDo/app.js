@@ -43,7 +43,7 @@ app.post('/task', (req, res) => {
 
 app.delete('/api/task/:id', (req, res) => {
     const id = req.params.id;
-    const taskIndex = tasks.findIndex(task => task.TaskID === id);
+    const taskIndex = tasks.findIndex(task => task.tid === id);
     if (taskIndex === -1) {
         return res.status(404).json({ error: 'Task not found' });
     }
@@ -51,15 +51,21 @@ app.delete('/api/task/:id', (req, res) => {
     res.status(204).send();
 });
 app.put('/api/task/:id', (req, res) => {
-    const id = req.params.id;
-    const taskIndex = tasks.findIndex(task => task.TaskID === id);
-    if (taskIndex === -1) {
-        return res.status(404).json({ error: 'Task not found' });
+    const id = parseInt(req.params.id);
+    const upd=res.body;
+    const taskIndex = tasks.findIndex(task => task.id === upd);
+    if (taskIndex !== -1) {
+        tasks[taskIndex]={...tasks[taskIndex],...upd};
+        res.json(tasks[taskIndex]);
+
     }
-    document.getElementById('TaskID').innerHTML=id
-    res.status(204).send();
+    else{
+        res.status(404).json({error:'task not found'});
+    }
+   
+    // res.status(204).send();
 });
 
-app.listen(3007, () => {
+app.listen(3008, () => {
     console.log("Server is running on port 3000");
 });

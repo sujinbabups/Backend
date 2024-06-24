@@ -59,9 +59,10 @@
             try {
                 const response = await fetch(`/api/task/${id}`, { method: 'PUT' });
                 if (!response.ok) {
-                    throw new Error('Failed to update task');
+                    // throw new Error('Failed to update task');
+                    window.location.href='add_task'
                 }
-                window.location.href = '/add_task';
+                // window.location.href = '/add_task';
 
             } catch (error) {
                 console.error('Error updating task:', error);
